@@ -1,8 +1,8 @@
 # Competitive Programming 💻
 
-These are the codes of the questions which I practice. 
+These are the codes of the questions which I have practiced. 
 
-> The codes here are only which I practiced after July 2020
+> The codes here are only which I have practiced after July 2020
 
 ### Profile Links : -
 
