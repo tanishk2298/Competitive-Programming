@@ -8,6 +8,6 @@ These are the codes of the questions which I have practiced.
 
 - [HackerRank](https://www.hackerrank.com/tsrsharma_22?hr_r=1)
 - [Codechef](https://www.codechef.com/users/tsrsharma_22)
-- [Geeksforgeeks](https://auth.geeksforgeeks.org/user/lw98/practice/)
+- [Geeksforgeeks](https://auth.geeksforgeeks.org/user/tsrsharma_22/practice/)
 - [SPOJ](https://www.spoj.com/myaccount/)
 
