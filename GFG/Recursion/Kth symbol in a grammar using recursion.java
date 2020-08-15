@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class abcd {	
+public class GFG {	
 	public static void main (String[] args)throws IOException {
 		Scanner sc = new Scanner(System.in);
 		int cases = sc.nextInt();
