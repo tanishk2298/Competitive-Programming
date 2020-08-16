@@ -5,8 +5,8 @@ public class GFG {
 
 	public static void main (String[] args)throws IOException {
 		Scanner sc = new Scanner(System.in);
-        int cases = sc.nextInt();
-        sc.nextLine();
+        	int cases = sc.nextInt();
+        	sc.nextLine();
 		while(cases-->0){
 			String ip = sc.nextLine();
 			String op = "";
