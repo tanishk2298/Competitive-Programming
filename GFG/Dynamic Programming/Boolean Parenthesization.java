@@ -3,57 +3,67 @@ import java.lang.*;
 import java.io.*;
 
 class GFG{
-    	public static HashMap<String, Integer> mp = new HashMap<>();
-    	public static void main (String[] args)throws IOException {
-	    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static int[][][] dp = new int[1001][1001][2];
+    public static void main (String[] args)throws IOException {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int tc = Integer.parseInt(br.readLine().trim());
-		while(tc-->0){ 
-		    mp.clear();
-	            int n = Integer.parseInt(br.readLine().trim());	
+		while(tc-->0){
+	        int n = Integer.parseInt(br.readLine().trim());	
 		    String str = br.readLine().trim();
-		    int ans = solve(str,0,n-1,true);
+		    for(int i=0;i<1001;i++)
+		        for(int j=0;j<1001;j++)
+		            for(int k=0;k<2;k++)
+		                dp[i][j][k] = -1;
+		    int ans = solve(str,0,n-1,1);
 		    System.out.println(ans);
 		}
 	}
-	public static int solve(String str, int i, int j, boolean isTrue){
+	public static int solve(String str, int i, int j, int isTrue){
 	    if(i > j)
-	        return 0;
+	        return dp[i][j][isTrue] = 0;
 	    if(i == j){
-	        if(isTrue)
-	            return (str.charAt(i) == 'T') ? 1 : 0;
-	        else
-	            return (str.charAt(i) == 'F') ? 1 : 0;
+	        if(isTrue == 1){
+	            if(str.charAt(i) == 'T')
+	                dp[i][j][isTrue] = 1;
+	            else
+	                dp[i][j][isTrue] = 0;
+	            return dp[i][j][isTrue];
+	        }
+	        else{
+	            if(str.charAt(i) == 'F')
+	                dp[i][j][isTrue] = 1;
+	            else
+	                dp[i][j][isTrue] = 0;
+	            return dp[i][j][isTrue];
+	        }
 	    }
 	    int ans = 0;
-	    StringBuilder temp = new StringBuilder();
-	    temp.append(Integer.toString(i)+" "+Integer.toString(j)+" "+Boolean.toString(isTrue));
-	    if(mp.containsKey(temp))
-	        return mp.get(temp);
+	    if (dp[i][j][isTrue] != -1)
+		    return dp[i][j][isTrue];
 	    for(int k=(i+1);k<j;k+=2){
-	        int lt = solve(str,i,k-1,true);
-	        int lf = solve(str,i,k-1,false);
-	        int rt = solve(str,k+1,j,true);
-	        int rf = solve(str,k+1,j,false);
+	        int lt = solve(str,i,k-1,1);
+	        int lf = solve(str,i,k-1,0);
+	        int rt = solve(str,k+1,j,1);
+	        int rf = solve(str,k+1,j,0);
 	        if(str.charAt(k) == '&'){
-	            if(isTrue)
+	            if(isTrue == 1)
 	                ans += (lt*rt);  
 	            else
-	                ans += (lf*rt) + (lt*rf) + (lf*lf);
+	                ans += (lf*rt) + (lt*rf) + (lf*rf);
 	        }
 	        else if(str.charAt(k) == '|'){
-	            if(isTrue)
+	            if(isTrue == 1)
 	                ans += (lt*rt) + (lt*rf) + (lf*rt);
 	            else
 	                ans += (lf*rf);
 	        }
 	        else if(str.charAt(k) == '^'){
-	            if(isTrue)
+	            if(isTrue == 1)
 	                ans += (lt*rf) + (lf*rt);
 	            else
 	                ans += (lt*rt) + (lf*rf);
 	        }
 	    }
-	    mp.put(temp.toString(),ans);
-	    return ans%1003;
+	    return dp[i][j][isTrue] = ans%1003;
 	}
 }
