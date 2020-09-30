@@ -21,7 +21,7 @@ class GFG
 	            for(int j=1;j<=w;j++){
 	                if(arr[i-1] <= j){
 	                    int temp = dp[i][j-arr[i-1]];
-	                    if(temp != 0 || (dp[i][j-arr[i-1]] == 0))
+	                    if(temp != 0 || j-arr[i-1] == 0))
 	                        temp++;
 	                    dp[i][j] = Math.max(temp,dp[i-1][j]);
 	                }
