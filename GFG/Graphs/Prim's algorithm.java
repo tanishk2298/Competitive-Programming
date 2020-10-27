@@ -19,7 +19,7 @@ class MST {
         boolean[] vis = new boolean[v];
         Arrays.fill(val, Integer.MAX_VALUE);
         Arrays.fill(vis,false);
-        parent[0] = -1;
+        parent[0] = -1; //takin 0 as a source
         val[0] = 0;
         for(int i=0;i<(v-1);i++){
             int min = Integer.MAX_VALUE;
