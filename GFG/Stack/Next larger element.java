@@ -21,23 +21,21 @@ class solve{
 
 //Driver Function
 
-class solve{
-    public static long[] nextLargerElement(long[] arr, int n) { 
-        long[] ans = new long[n];
-        for(int i=0;i<n-1;i++){
-            long curr = arr[i];
-            boolean flag = false;
-            for(int j=(i+1);j<n;j++){
-                if(arr[j] > curr){
-                    ans[i] = arr[j];
-                    flag = true;
-                    break;
-                }
-            }
-            if(!flag)
-                ans[i] = -1;
-        }
-        ans[n-1] = -1;
-        return ans;
-    } 
+class GFG 
+{  
+	public static void main (String[] args) throws IOException 
+    {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int t = Integer.parseInt(br.readLine().trim());
+		while(t-->0){
+		    int n = Integer.parseInt(br.readLine().trim());
+		    String inputLine[] = br.readLine().trim().split(" ");
+		    long[] arr = new long[n];
+		    for(int i=0; i<n; i++)arr[i]=Long.parseLong(inputLine[i]);
+		    long[] res = new solve().nextLargerElement(arr, n);
+		    for (int i = 0; i < n; i++) 
+		        System.out.print(res[i] + " ");
+		    System.out.println();
+		}
+	}
 }
