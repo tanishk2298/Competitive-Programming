@@ -6,8 +6,15 @@ These are the codes of the questions which I have practiced.
 
 ### Profile Links : -
 
-- [HackerRank](https://www.hackerrank.com/tsrsharma_22?hr_r=1)
-- [Codechef](https://www.codechef.com/users/tsrsharma_22)
-- [Geeksforgeeks](https://auth.geeksforgeeks.org/user/tsrsharma_22/practice/)
-- [SPOJ](https://www.spoj.com/myaccount/)
-
+<a href="https://www.hackerrank.com/tsrsharma_22">
+  <img align="left" alt="Tanishk Sharma | Hackerrank" width="40px" src="https://github.com/tanishk2298/tanishk2298/blob/main/assets/hr.svg" />
+</a>
+<a href="https://www.codechef.com/users/tsrsharma_22">
+  <img align="left" alt="Tanishk Sharma | Codechef" width="40px" src="https://github.com/tanishk2298/tanishk2298/blob/main/assets/cc.png" />
+</a>
+<a href="https://auth.geeksforgeeks.org/user/tsrsharma_22/profile">
+  <img align="left" alt="Tanishk Sharma | Geeksforgeeks" width="40px" src="https://github.com/tanishk2298/tanishk2298/blob/main/assets/icons8-geeksforgeeks.svg" />
+</a>
+<a href="https://codeforces.com/profile/tsrsharma_22">
+  <img align="left" alt="Tanishk Sharma | Codeforces" width="40px" src="https://github.com/tanishk2298/tanishk2298/blob/main/assets/cf.png" />
+</a>
