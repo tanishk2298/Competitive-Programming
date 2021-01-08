@@ -1,8 +1,6 @@
 # Competitive Programming 💻
 
-These are the codes of the questions which I have practiced. 
-
-> The codes here are only which I have practiced after July 2020
+> Solutions to various DSA problems and CP Problems from Codechef, Codeforces, Geeksforgeeks, SPOJ etc
 
 ### Profile Links : -
 
