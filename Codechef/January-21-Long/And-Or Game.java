@@ -1,8 +1,6 @@
 //Problem Link https://www.codechef.com/JAN21B/problems/ORAND
 
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 class Codechef
 {
