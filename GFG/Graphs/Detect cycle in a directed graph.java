@@ -19,7 +19,7 @@ class DetectCycle
             vis[curr] = true;
             rec[curr] = true;
             for(Integer i : adj.get(curr)){
-                if(!vis[i] && dfs(adj,v,i,vis,rec))
+                if(vis[i] == false && dfs(adj,v,i,vis,rec))
                     return true;
                 else if(rec[i] == true)
                     return true;
