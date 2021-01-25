@@ -4,8 +4,18 @@ import java.lang.*;
 
 class Solution
 {
-    static int[] dijkstra(ArrayList<ArrayList<Integer>> g, int src, int v)
+    static int[] dijkstra(ArrayList<ArrayList<Integer>> graph, int src, int v)
     {
+        int[][] g = new int[v][v];
+        for(int i=0;i<v;i++){
+            ArrayList<Integer> curr = graph.get(i);
+            for(int j=0;j<v;j++){
+                if(curr.get(j) == Integer.MAX_VALUE)
+                    g[i][j] = 0;
+                else
+                    g[i][j] = curr.get(j);
+            }
+        }
         boolean[] vis = new boolean[v];
         Arrays.fill(vis, false);
         int[] val = new int[v];
@@ -24,8 +34,8 @@ class Solution
             }
             vis[curr] = true;
             for(int j=0;j<v;j++){
-                if(vis[j] == false && g.get(curr).get(j) != 0 && val[curr] != Integer.MAX_VALUE && (val[curr] + g.get(curr).get(j) < val[j])){
-                    val[j] = val[curr] + g.get(curr).get(j);
+                if(vis[j] == false && g[curr][j] != 0 && val[curr] != Integer.MAX_VALUE && (val[curr] + g[curr][j] < val[j])){
+                    val[j] = val[curr] + g[curr][j];
                     parent[j] = curr;
                 }
             }
