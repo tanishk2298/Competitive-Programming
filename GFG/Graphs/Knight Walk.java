@@ -19,11 +19,11 @@ class GFG
 	        int kY = sc.nextInt() -1;
 	        int tX = sc.nextInt() -1;
 	        int tY = sc.nextInt() -1;
-	        int ans = dfs(board,vis,kX,kY,tX,tY,n,m);
+	        int ans = bfs(board,vis,kX,kY,tX,tY,n,m);
 	        System.out.println(ans);
 	    }
 	}
-	public static int dfs(int[][] board, boolean[][] vis, int kX, int kY, int tX, int tY, int n, int m){
+	public static int bfs(int[][] board, boolean[][] vis, int kX, int kY, int tX, int tY, int n, int m){
 	    Queue<String> que = new LinkedList<>();
 	    board[kX][kY] = 0;
 	    vis[kX][kY] = true;
