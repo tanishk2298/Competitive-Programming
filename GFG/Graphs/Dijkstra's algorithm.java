@@ -8,29 +8,29 @@ class Solution
     {
         boolean[] vis = new boolean[v];
         Arrays.fill(vis, false);
-        int[] dist = new int[v];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        dist[src] = 0;
-        for(int i=0;i<v;i++){
+        int[] val = new int[v];
+        Arrays.fill(val, Integer.MAX_VALUE);
+        val[src] = 0;
+        int[] parent = new int[v];
+        parent[0] = -1;
+        for(int i=0;i<v-1;i++){
             int min = Integer.MAX_VALUE;
             int curr = 0;
             for(int j=0;j<v;j++){
-                if(vis[j] == false && dist[j] < min){
-                    min = dist[j];
+                if(vis[j] == false && val[j] < min){
+                    min = val[j];
                     curr = j;
                 }
             }
-            if(curr == v)
-                break;
             vis[curr] = true;
-            int cnt = 0;
-            for(Integer x : g.get(curr)){
-                if(vis[cnt] == false && x!=0 && (dist[curr]+x) < dist[cnt])
-                    dist[cnt] = dist[curr] + x;
-                cnt++;
+            for(int j=0;j<v;j++){
+                if(vis[j] == false && g.get(curr).get(j) != 0 && val[curr] != Integer.MAX_VALUE && (val[curr] + g.get(curr).get(j) < val[j])){
+                    val[j] = val[curr] + g.get(curr).get(j);
+                    parent[j] = curr;
+                }
             }
         }
-        return dist;
+        return val;
     }
 }
 
